@@ -36,7 +36,7 @@ footer {
 }
 
 /* Grid container for the projects section */
-.grid-container {
+projects.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5em;
@@ -44,7 +44,7 @@ footer {
 }
 
 /* Individual project card */
-.project-card {
+projects.project-card {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -54,12 +54,12 @@ footer {
 }
 
 /* Hover effect to lift the card */
-.project-card:hover {
+projects.project-card:hover {
     transform: scale(1.05);
 }
 
 /* Button for each project */
-.btn {
+projects.btn {
     display: inline-block;
     margin-top: 1em;
     padding: 0.5em 1.5em;
@@ -70,6 +70,6 @@ footer {
     transition: background-color 0.3s;
 }
 
-.btn:hover {
+projects.btn:hover {
     background-color: #555;
 }
