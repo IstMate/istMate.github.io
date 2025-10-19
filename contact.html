@@ -22,8 +22,23 @@
     <main>
         <section id="contact" data-aos="fade-left">
             <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:csaszisti@gmail.com">csaszisti@gmail.com</a></p>
-            <!-- Add form/socials -->
+            <p>Got a question or just want to say hi? Drop me a message!</p>
+            <form id="contact-form" action="https://formspree.io/f/mnngrzwd" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required placeholder="Your message"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <p id="form-message" style="display: none; color: green;"></p>
         </section>
     </main>
 
@@ -33,5 +48,33 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('form-message').textContent = 'Message sent! Thanks!';
+                    document.getElementById('form-message').style.display = 'block';
+                    form.reset();
+                    setTimeout(() => {
+                        document.getElementById('form-message').style.display = 'none';
+                    }, 3000);
+                } else {
+                    document.getElementById('form-message').textContent = 'Oops, something went wrong.';
+                    document.getElementById('form-message').style.display = 'block';
+                }
+            }).catch(error => {
+                document.getElementById('form-message').textContent = 'Error: Could not send message.';
+                document.getElementById('form-message').style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
