@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mate - Projects</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Your main portfolio CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <header>
+        <img src="mate1.png" alt="Mate's Logo" class="logo">
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">About</a>  <!-- Fixed typo -->
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="projects" data-aos="fade-left">
+            <h2>Projects</h2>
+            
+            <!-- Drawing App (Standalone via Iframe - First, in Middle) -->
+            <div id="drawing-container" data-aos="fade-left" data-aos-delay="200">
+                <h3>Drawing App</h3>
+                <p>Sketch with tools like freehand, stamps, and kaleidoscope—built with p5.js. Use the fullscreen button for big-screen drawing!</p>
+                <iframe id="drawing-iframe" src="drawing_app/index.html" width="800" height="600" frameborder="0" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-downloads"></iframe>  <!-- Sandbox for security -->
+                <button id="fullscreen-btn" class="btn">Fullscreen Mode</button>
+            </div>
+
+            <!-- Divider -->
+            <hr class="divider">
+
+            <!-- Game (Below - Embed or Link) -->
+            <div id="game-container" data-aos="fade-left" data-aos-delay="400">
+                <h3>Simple JS Game</h3>
+                <p>A platformer adventure—jump, collect, survive!</p>
+                <img src="game_project/assets/1st_game.png" alt="Game Preview" class="project-image" data-aos="fade-up">
+                <button id="start-game-btn" class="btn">Start Game</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Mate Csaszar. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Fullscreen for drawing iframe
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const drawingIframe = document.getElementById('drawing-iframe');
+        if (fullscreenBtn && drawingIframe) {
+            fullscreenBtn.addEventListener('click', () => {
+                if (drawingIframe.requestFullscreen) {
+                    drawingIframe.requestFullscreen();  // Fullscreen iframe
+                } else if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();  // Fallback full page
+                }
+            });
+        }
+
+        // Play button for game (open in new tab)
+        const playGameBtn = document.getElementById('play-game-btn');
+        if (playGameBtn) {
+            playGameBtn.addEventListener('click', () => {
+                window.open('game_project_final/game.html', '_blank');
+            });
+        }
+    </script>
+    <script src="script.js"></script>  <!-- Your portfolio script -->
+</body>
+</html>

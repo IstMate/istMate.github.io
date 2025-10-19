@@ -1,46 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mate - About Me</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <header>
-        <h1>Hi, I'm Mate</h1>
-        <nav>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <img src="mate1.png" alt="Mate's Logo" class="logo">
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="grid-container">
-            <div class="project-card">
-                <h3>Simple JS Game</h3>
-                <p>A fun interactive game built with JavaScript.</p>
-                <a href="game_project_final/game.html" class="btn">Play Game</a>
-            </div>
-            <div class="project-card">
-                <h3>Weather App</h3>
-                <p>A weather forecast app using OpenWeather API.</p>
-                <a href="#" class="btn">Coming Soon</a>
-            </div>
-            <!-- Add more cards as you develop more projects -->
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:your-email@example.com">csaszisti@gmail.com</a></p>
-    </section>
+    <main>
+        <section id="about" data-aos="fade-left">
+            <h1>About Me</h1>
+            <p>Hi, I'm Mate—a passionate developer diving into JS, p5.js, and web magic. From noob sketches to interactive games, I'm building stuff that sparks joy. Let's connect!</p>
+            <!-- Add your photo/bio/details here -->
+            <img src="your-photo.jpg" alt="Me" class="project-image" data-aos="fade-up">
+        </section>
+    </main>
 
     <footer>
         <p>© 2024 Mate Csaszar. All rights reserved.</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="lib/p5.min.js"></script>
+    <script src="lib/p5.dom.js"></script>
+
+    <!-- Tools FIRST - define functions before sketch.js uses them -->
+    <script src="tools/freehandTool.js"></script>
+    <script src="tools/lineToTool.js"></script>
+    <script src="tools/sprayCanTool.js"></script>
+    <script src="tools/mirrorDrawTool.js"></script>
+    <script src="tools/stampTool.js"></script>
+    <script src="tools/rectangleTool.js"></script>
+    <script src="tools/eraserTool.js"></script>
+    <script src="tools/magnifierTool.js"></script>
+    <script src="tools/kaleidoscopeTool.js"></script>
+
+    <!-- Now load sketch.js (uses tools) -->
+    <script src="sketch.js"></script>
+
+    <!-- add extra scripts below -->
+    <script src="toolbox.js"></script>
+    <script src="helperFunctions.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+      <div class="wrapper">
+      <div class="box header">My Drawing App
+        <button id="clearButton">Clear</button>
+        <button id="saveImageButton">Save Image</button> 
+        <div id = "undoButton">Undo</div>
+      </div>
+      <div class="box" id="sidebar"></div>
+      <div id="content"></div>
+      <div class="box options">
+        <input type="color" id="colorPicker"/>
+        <div id="numberOfStampsControl"></div>
+        <div id="sizeOfStampsControl"></div>
+        <div id="stampOptionsControl"></div>
+        <div id="sizeOfBrushControl"></div>
+        <div id="sizeOfSprayControl"></div>
+        <div id="magnifyingOptionsControl"></div>
+        <div id="kaleidoscopeSegmentsControl"></div>
+      </div>
+  </body>
+</html>

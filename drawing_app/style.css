@@ -1,0 +1,141 @@
+html, body {
+  margin: 0px;
+  height: 100%;
+  padding: 0;
+}
+
+#sidebar {
+	grid-area: sidebar;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px 0;
+	background-color: #f0f0f0; /* Light background for contrast */
+}
+
+#content {
+	grid-area: content;
+	overflow: auto;
+}
+
+.header {
+	grid-area: header;
+	font-family: Helvetica, sans-serif
+}
+
+.footer{
+  grid-area: footer;
+}
+
+.sideBarItem{
+	max-height: 50px;
+	max-width: 50px;
+	padding:5px;
+	margin: 2px 0; /* Space between icons */
+    cursor: pointer;
+}
+
+.sideBarItem img{
+	max-height: 40px;
+	max-Width:40px;
+	object-fit: contain;
+}
+
+#colorPicker {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 15px;
+	z-index: 10;
+}
+
+.options {
+    grid-area: options;
+    padding: 15px;
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+	min-height: 50px;
+	position: relative;
+	width: 100%;
+	box-sizing: border-box
+}
+
+.wrapper {
+	display: grid;
+	height: 100%;
+	width: 100%;
+	grid-template-columns: 70px 1fr;
+	grid-template-rows: 35px 1fr auto;
+	grid-template-areas:
+	"header header"
+	"sidebar content"
+	"options options";
+	background-color: #fff;
+	color: #444;
+	align-content: end;
+}
+	
+.box {
+  background-color: #444;
+  color: #fff;
+  font-size: 150%;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+    background-color: #999;
+	padding: 5px;
+}
+
+#clearButton, #saveImageButton {
+	padding: 5px 10px;
+	font-size: 16px;
+	background-color: #ddd;
+	border: 1px solid #888;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: Helvetica, sans-serif;
+}
+
+#undoButton {
+	display: inline-block;
+	padding: 5px 10px;
+	font-size: 16px;
+	background-color: #ddd;
+	border: 1px solid #888;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: Helvetica, sans-serif;
+	color: black;
+	position: relative;
+}
+
+#undoButton::after {
+	content: "Press 'Z' to undo";
+	position: absolute;
+	top: 120%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #000;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 14px;
+	white-space: nowrap;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	pointer-events: none;
+}
+
+#undoButton:hover::after {
+	opacity: 1;
+}
