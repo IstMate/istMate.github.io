@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startGameBtn = document.getElementById('start-game-btn');
     if (startGameBtn) {
         startGameBtn.addEventListener('click', () => {
-            window.open('https://IstMate.github.io-main/game_project/game.html', '_blank');
+            window.open('https://IstMate.github.io/game_project/game.html', '_blank');
         });
     }
 });

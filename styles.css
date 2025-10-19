@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap'); /* Changed to Roboto */
 
 body {
-    font-family: 'NEW: Inter', sans-serif;
+    font-family: 'Neuton', serif;
     margin: 0;
-    padding: 0;
+    padding: 0 0 4em 0;
     background-color: #FAFAF9;
     color: #1B1B1B;
     line-height: 1.6;
@@ -13,10 +13,10 @@ body {
 header {
     background-color: #1B1B1B;
     color: #FAFAF9;
-    padding: 0 250px 1.5em 250px; /* Aligned; top padding 0 for swim-in */
+    padding: 1em 250px; /* Reduced top padding, balanced sides */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Center vertically */
     position: relative;
     animation: swimIn 1s ease-out forwards; /* Swim-in animation */
     opacity: 0; /* Start hidden */
@@ -59,9 +59,9 @@ nav a:hover {
 
 section {
     margin: 4em auto;
-    max-width: calc(100% - 500px);
+    max-width: calc(100% - 500px); /* Wider section to accommodate drawing app */
     padding: 2em;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(27, 27, 27, 0.6);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
@@ -85,6 +85,13 @@ footer {
     margin-top: 1em;
 }
 
+/* Make Projects heading golden */
+#projects h2 {
+    color: #D7A758;
+    margin-bottom: 1em;
+    font-size: 3rem;
+}
+
 .project-card {
     background-color: #FFFFFF;
     border-radius: 12px;
@@ -102,10 +109,12 @@ footer {
 
 .project-image {
     width: 100%;
-    height: 200px;
+    height: 300px; /* Reduced from previous wide setting */
+    max-width: 1000px;
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease;
+
 }
 
 .project-card:hover .project-image {
@@ -114,9 +123,10 @@ footer {
 
 .btn {
     display: inline-block;
-    margin-top: 1em;
+    margin-top: 0.7em; /* Moved up by reducing margin */
+    margin-bottom: 1em;
     padding: 0.75em 1.5em;
-    background-color: #4C8CB2;
+    background-color: #2c2c2c;
     color: #FAFAF9;
     text-decoration: none;
     border-radius: 6px;
@@ -131,41 +141,75 @@ footer {
     transform: translateY(-2px);
 }
 
-/* NEW: Embed styles */
+/* Embed styles */
 #drawing-container, #game-container {
+    background-color: rgba(27, 27, 27, 0.6);
     width: 100%;
     margin: 2em 0;
     border-radius: 12px;
+    margin-bottom: 2em;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    color: #FAFAF9;
+    display: flex;            /* add this */
+    flex-direction: column;   /* stack children vertically */
+    align-items: center;      /* center horizontally */
+    justify-content: center;  /* center vertically */
+    gap: 1em;  
 }
 
-#drawing-canvas, #game-canvas {
+#drawing-container h3, #game-container h3 {
+    color: #D7A758; /* golden highlight */
+}
+
+#drawing-container p, #game-container p {
+    color: #EAEAEA;
+}
+
+#drawing-container .btn, #game-container .btn {
+    background-color: #2c2c2c;
+    color: #FAFAF9;
+}
+
+#drawing-container .btn:hover, #game-container .btn:hover {
+    background-color: #D7A758;
+    color: #1B1B1B;
+}
+
+#drawing-iframe {
     display: block;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 600px;
 }
 
-#fullscreen-btn {
-    margin: 1em 0;
-    background: #4C8CB2;
-    color: white;
+#contact-form .btn {
+    background-color: #383838;
+    color: #FAFAF9;
+    padding: 0.75em 1.5em;
     border: none;
-    padding: 0.5em 1em;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 0.5em;
 }
 
-#fullscreen-btn:hover {
-    background: #D7A758;
+#contact-form .btn:hover {
+    background-color: #D7A758;
+    transform: translateY(-2px);
 }
 
-/* NEW: Divider line */
+/* Divider line */
 .divider {
     border: none;
     height: 2px;
-    background: #E1E1E1;
+    background: #D7A758;
     margin: 4em 0;
 }
 
@@ -174,7 +218,73 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Mobile */
+/* Contact Form Styles */
+#contact {
+    max-width: calc(100% - 900px); /* Wider to match drawing app */
+    color: #FAFAF9;
+    margin: 4em auto 8em auto;
+    padding: 2em;
+    background-color: rgba(27, 27, 27, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+    text-align: left;
+    color: #FAFAF9;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    color: #FAFAF9;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    font-size: 1em;
+    color: #FAFAF9;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #D7A758; 
+    background-color: rgba(255,255,255,0.15);
+    outline: none;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+#contact-form .btn {
+    background-color: #2c2c2c;
+    color: #FAFAF9;
+}
+
+#contact-form .btn:hover {
+    background-color: #D7A758;
+    color: #1B1B1B;
+}
+
+#form-message {
+    margin-top: 1em;
+    text-align: center;
+    color: #D7A758;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     header {
         padding: 1em;
@@ -188,360 +298,158 @@ html {
         margin-left: 1em;
         margin-right: 1em;
     }
-    #drawing-container, #game-container { margin: 1em 0; }
-}
-
-#drawing-embed {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-#drawing-embed .wrapper {
-    display: grid;
-    height: 600px;  /* Fixed height for demo; make responsive if needed */
-    width: 100%;
-    grid-template-columns: 70px 1fr;
-    grid-template-rows: 35px 1fr auto;
-    grid-template-areas: "header header" "sidebar content" "options options";
-    background-color: #fff;
-}
-
-#drawing-embed .box {
-    background-color: #444;
-    color: #fff;
-    font-size: 150%;
-}
-
-#drawing-embed #drawing-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #999;
-    padding: 5px;
-}
-
-#drawing-embed .sideBarItem {
-    max-height: 50px;
-    max-width: 50px;
-    padding: 5px;
-}
-
-#drawing-embed .sideBarItem img {
-    max-height: 50px;
-    max-width: 50px;
-}
-
-#drawing-embed #colorPicker {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 15px;
-    z-index: 10;
-}
-
-#drawing-embed .options {
-    padding: 15px;
-    border: 1px solid #000;
-    background-color: #f0f0f0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    min-height: 50px;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Drawing Embed Styles (Matches Original style.css) */
-#drawing-embed {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-#drawing-embed .wrapper {
-    display: grid;
-    height: 600px;  /* Adjust as needed; or use JS resize */
-    width: 100%;
-    grid-template-columns: 70px 1fr;
-    grid-template-rows: 35px 1fr auto;
-    grid-template-areas: "header header" "sidebar content" "options options";
-    background-color: #fff;
-    color: #444;
-}
-
-#drawing-embed .box {
-    background-color: #444;
-    color: #fff;
-    font-size: 150%;
-}
-
-#drawing-embed .header {
-    grid-area: header;
-    font-family: Helvetica, sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #999;
-    padding: 5px;
-}
-
-#drawing-embed #drawing-sidebar {
-    grid-area: sidebar;
-    overflow-y: scroll;
-}
-
-#drawing-embed #drawing-content {
-    grid-area: content;
-    overflow: auto;
-}
-
-#drawing-embed .options {
-    grid-area: options;
-    padding: 15px;
-    border: 1px solid #000;
-    background-color: #f0f0f0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    min-height: 50px;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#drawing-embed .sideBarItem {
-    max-height: 50px;
-    max-width: 50px;
-    padding: 5px;
-}
-
-#drawing-embed .sideBarItem img {
-    max-height: 50px;
-    max-width: 50px;
-}
-
-#drawing-embed #colorPicker {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 15px;
-    z-index: 10;
-}
-
-#drawing-embed #clearButton, #drawing-embed #saveImageButton {
-    padding: 5px 10px;
-    font-size: 16px;
-    background-color: #ddd;
-    border: 1px solid #888;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Helvetica, sans-serif;
-}
-
-#drawing-embed #undoButton {
-    display: inline-block;
-    padding: 5px 10px;
-    font-size: 16px;
-    background-color: #ddd;
-    border: 1px solid #888;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Helvetica, sans-serif;
-    color: black;
-    position: relative;
-}
-
-#drawing-embed #undoButton::after {
-    content: "Press 'Z' to undo";
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #000;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-}
-
-#drawing-embed #undoButton:hover::after {
-    opacity: 1;
-}
-
-/* Iframe Styles for Drawing App */
-#drawing-container {
-    text-align: center;
-}
-
-#drawing-iframe {
-    display: block;
-    margin: 0 auto;
-    border: 2px solid #ccc;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-}
-
-@media (max-width: 768px) {
     #drawing-iframe {
         width: 100%;
-        height: 400px;  /* Smaller on mobile */
+        height: 400px;
     }
-}
-
-/* Existing styles remain unchanged */
-
-/* Game Container Styles */
-#game-container {
-    width: 100%;
-    margin: 2em 0;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center content */
-    position: relative; /* For potential overlay effects */
-}
-
-#game-container .project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0; /* Rounded top corners only */
-    transition: transform 0.3s ease;
-}
-
-#game-container .project-image:hover {
-    transform: scale(1.05);
-}
-
-#game-iframe {
-    display: none; /* Controlled by JS */
-    margin: 0 auto;
-    border: 2px solid #ccc;
-    border-radius: 0 0 12px 12px; /* Rounded bottom corners only */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-    transition: opacity 0.3s ease; /* Smooth fade */
-}
-
-#game-iframe.active {
-    display: block; /* Shown when active */
-    opacity: 1;
-}
-
-#toggle-game-btn {
-    margin: 1em 0;
-    background: #4C8CB2;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-#toggle-game-btn:hover {
-    background: #D7A758;
-}
-
-/* Media Query for Mobile */
-@media (max-width: 768px) {
-    #game-iframe {
-        width: 100%;
-        height: 400px; /* Smaller on mobile */
-    }
-    #game-container .project-image {
-        height: 150px; /* Adjust image height for mobile */
-    }
-    #toggle-game-btn {
-        width: 100%; /* Full width on mobile */
-    }
-}
-
-/* Contact Form Styles */
-#contact {
-    max-width: calc(100% - 500px);
-    margin: 4em auto;
-    padding: 2em;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.form-group {
-    margin-bottom: 1.5em;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5em;
-    color: #1B1B1B;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-    box-sizing: border-box;
-    background-color: #FAFAF9;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #D7A758;
-    outline: none;
-}
-
-.form-group textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-#contact-form .btn {
-    background-color: #4C8CB2;
-    color: #FAFAF9;
-    padding: 0.75em 1.5em;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#contact-form .btn:hover {
-    background-color: #D7A758;
-    transform: translateY(-2px);
-}
-
-#form-message {
-    margin-top: 1em;
-    text-align: center;
-}
-
-/* Media Query for Mobile */
-@media (max-width: 768px) {
+    #game-container { margin: 1em 0; }
+    #game-container .project-image { height: 150px; }
+    #toggle-game-btn, #fullscreen-btn, #contact-form .btn { width: 100%; margin-top: 0.5em; }
     #contact {
         max-width: 100%;
         margin-left: 1em;
         margin-right: 1em;
     }
-    .form-group input,
-    .form-group textarea {
-        font-size: 0.9em;
-    }
+    .form-group input, .form-group textarea { font-size: 0.9em; }
 }
+
+/* Interactive background */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 80%;
+  background-image: url('bg.jpg');
+  background-size: 110%; /* slightly zoomed for movement space */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: background-position 0.05s linear;
+  pointer-events: none;
+}
+#bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* adjust darkness */
+}
+
+.hero {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FAFAF9;
+  background: rgba(27, 27, 27, 0.6);
+  border-radius: 12px;
+  margin-top: 3em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 2em;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 1.5s ease-in;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  color: #FAFAF9;
+}
+
+.hero .highlight {
+  color: #D7A758;
+}
+
+.hero p {
+  color: #EAEAEA;
+  margin: 1em 0;
+  font-size: 1.1em;
+}
+
+.hero-buttons {
+  margin-top: 2em;
+}
+
+.hero .btn {
+  margin: 0.5em;
+  padding: 0.8em 1.6em;
+  font-weight: 600;
+}
+
+.hero .btn.secondary {
+  background: transparent;
+  border: 2px solid #D7A758;
+  color: #D7A758;
+}
+
+.hero .btn.secondary:hover {
+  background: rgba(215, 167, 88, 0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Skills section  */
+#skills.hero {
+    min-height: 30vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(27, 27, 27, 0.6);
+    border-radius: 12px;
+    margin: 3em auto 7em auto;
+    padding: 0.00000000001em 2em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    color: #FAFAF9;
+}
+
+#skills .hero-content {
+    max-width: 700px;
+    max-height: fit-content;
+    padding: 2em;
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    color: #D7A758;
+    margin-bottom: 1em;
+}
+
+#skills p {
+    font-size: 1.2rem;
+    color: #EAEAEA;
+    margin-bottom: 2rem;
+}
+
+#skills .skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.skill {
+    background: rgba(27, 27, 27, 0.8);
+    color: #FAFAF9;
+    padding: 0.5em 1.2em;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-4px);
+    background: #D7A758;
+    color: #1B1B1B;
+}
+

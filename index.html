@@ -1,38 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mate - About Me</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mate — Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
-    <header>
-        <img src="mate1.png" alt="Mate's Logo" class="logo">
-        <div class="nav-container">
-            <nav>
-                <a href="index.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
+  <!-- Background -->
+  <div id="bg"></div>
 
-    <main>
-        <section id="about" data-aos="fade-left">
-            <h1>About Me</h1>
-            <p>Hi, I'm Mate—a passionate developer diving into JS, p5.js, and web magic. From noob sketches to interactive games, I'm building stuff that sparks joy. Let's connect!</p>
-            <!-- Add your photo/bio/details here -->
-            <img src="your-photo.jpg" alt="Me" class="project-image" data-aos="fade-up">
-        </section>
-    </main>
+  <!-- Header -->
+  <header>
+    <img src="mate1.png" alt="Mate's Logo" class="logo" />
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <footer>
-        <p>© 2024 Mate Csaszar. All rights reserved.</p>
-    </footer>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Hey, I'm <span class="highlight">Mate</span></h1>
+      <p>A <strong>CS student</strong> and aspiring <strong>web developer</strong> crafting fun, interactive experiences.</p>
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn">View Projects</a>
+        <a href="contact.html" class="btn secondary">Let's Connect</a>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
+  <!-- Skills Section -->
+  <section id="skills" class="hero">
+  <div class="hero-content">
+    <h2>Skills & Tools</h2>
+    <p>Technologies I work with and enjoy exploring:</p>
+    <div class="skills-container">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">p5.js</div>
+      <div class="skill">scripts</div>
+      <div class="skill">Godot</div>
+      <div class="skill">Python</div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Mate Csaszar. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Animated background movement
+    const bg = document.getElementById("bg");
+    let targetX = 50, targetY = 50;
+    let currentX = 50, currentY = 50;
+
+    window.addEventListener("mousemove", (e) => {
+      targetX = 50 + (e.clientX / window.innerWidth - 0.5) * 10;
+      targetY = 50 + (e.clientY / window.innerHeight - 0.5) * 10;
+    });
+
+    function animate() {
+      currentX += (targetX - currentX) * 0.1;
+      currentY += (targetY - currentY) * 0.1;
+      bg.style.backgroundPosition = `${currentX}% ${currentY}%`;
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
 </html>
