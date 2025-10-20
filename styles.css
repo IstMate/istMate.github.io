@@ -292,7 +292,9 @@ html {
         text-align: center;
     }
     .nav-container { margin-top: 1em; }
+
     nav a { margin: 0 0.5em; }
+
     section {
         max-width: 100%;
         margin-left: 1em;
@@ -303,14 +305,62 @@ html {
         height: 400px;
     }
     #game-container { margin: 1em 0; }
+
     #game-container .project-image { height: 150px; }
+
     #toggle-game-btn, #fullscreen-btn, #contact-form .btn { width: 100%; margin-top: 0.5em; }
+    
     #contact {
         max-width: 100%;
         margin-left: 1em;
         margin-right: 1em;
     }
     .form-group input, .form-group textarea { font-size: 0.9em; }
+
+    #skills, #tools, #drawing-container, #game-container, #contact {
+        width: 90%;
+        margin: 1.5em auto;
+        border-radius: 12px;
+        padding: 1em;
+        box-sizing: border-box;
+    }
+
+    .skills-grid, .tools-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8em;
+    }
+
+    .skills-grid .skill-item,
+    .tools-grid .tool-item {
+        flex: 1 1 100px;
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    #drawing-container canvas {
+        width: 100% !important;
+        height: 70vh !important;
+        display: block;
+    }
+
+    #game-container iframe,
+    #game-container canvas {
+        width: 100% !important;
+        height: 70vh !important;
+    }
+
+    footer {
+        margin-top: 2em;
+        padding-bottom: 1.5em;
+    }
+
+    body {
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+    }
 }
 
 /* Interactive background */
