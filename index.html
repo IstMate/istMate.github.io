@@ -59,7 +59,6 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
-
     // Animated background movement
     const bg = document.getElementById("bg");
     let targetX = 50, targetY = 50;
@@ -77,6 +76,41 @@
       requestAnimationFrame(animate);
     }
     animate();
+
+    // Mobile warning popup
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileWarning = document.getElementById('mobile-warning');
+        const closeBtn = document.querySelector('#mobile-warning .close-btn');
+
+        // Use matchMedia for real-time mobile detection
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        function handleMobileChange(e) {
+            if (mobileWarning) {
+                console.log("Width check:", window.innerWidth, "Matches:", e.matches); // Debug
+                if (e.matches) {
+                    mobileWarning.classList.add('active'); // Show on mobile
+                } else {
+                    mobileWarning.classList.remove('active'); // Hide on desktop
+                }
+            }
+        }
+
+        mediaQuery.addListener(handleMobileChange); // Listen for resize
+        handleMobileChange(mediaQuery); // Initial check
+
+        // Close popup when button is clicked
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                mobileWarning.classList.remove('active');
+            });
+        }
+    });
   </script>
+  <div id="mobile-warning">
+      <div class="message">
+          <p>Please note: The mobile version of this website is not fully supported. For the best experience, please use a desktop or laptop.</p>
+          <button class="close-btn">Close</button>
+      </div>
+  </div>
 </body>
 </html>

@@ -33,3 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+(function setVh() {
+    function updateVh() {
+        // 1% of the viewport height, accounting for mobile browser bars
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    updateVh();
+
+    // Recalculate when device orientation or window size changes
+    window.addEventListener('resize', updateVh, { passive: true });
+    window.addEventListener('orientationchange', () => setTimeout(updateVh, 250), { passive: true });
+})();
