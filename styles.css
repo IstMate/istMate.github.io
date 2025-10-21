@@ -51,20 +51,20 @@ body {
     background-color: #FAFAF9;
     color: #1B1B1B;
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll on animations */
+    overflow-x: hidden;
 }
 
 header {
     background-color: #1B1B1B;
     color: #FAFAF9;
-    padding: 1em 250px; /* Reduced top padding, balanced sides */
+    padding: 1em 250px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Center vertically */
+    align-items: center;
     position: relative;
-    animation: swimIn 1s ease-out forwards; /* Swim-in animation */
-    opacity: 0; /* Start hidden */
-    transform: translateY(-50px); /* Slide down from above */
+    animation: swimIn 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-50px); 
 }
 
 @keyframes swimIn {
@@ -103,7 +103,7 @@ nav a:hover {
 
 section {
     margin: 4em auto;
-    max-width: calc(100% - 500px); /* Wider section to accommodate drawing app */
+    max-width: calc(100% - 500px);
     padding: 2em;
     background-color: rgba(27, 27, 27, 0.6);
     border-radius: 12px;
@@ -119,7 +119,7 @@ footer {
     width: 100%;
     bottom: 0;
     font-size: 0.9em;
-    left: 0; /* Ensure full alignment */
+    left: 0;
 }
 
 .grid-container {
@@ -129,7 +129,6 @@ footer {
     margin-top: 1em;
 }
 
-/* Make Projects heading golden */
 #projects h2 {
     color: #D7A758;
     margin-bottom: 1em;
@@ -153,7 +152,7 @@ footer {
 
 .project-image {
     width: 100%;
-    height: 300px; /* Reduced from previous wide setting */
+    height: 300px;
     max-width: 1000px;
     object-fit: cover;
     border-radius: 8px;
@@ -167,7 +166,7 @@ footer {
 
 .btn {
     display: inline-block;
-    margin-top: 0.7em; /* Moved up by reducing margin */
+    margin-top: 0.7em;
     margin-bottom: 1em;
     padding: 0.75em 1.5em;
     background-color: #2c2c2c;
@@ -197,15 +196,15 @@ footer {
     text-align: center;
     position: relative;
     color: #FAFAF9;
-    display: flex;            /* add this */
-    flex-direction: column;   /* stack children vertically */
-    align-items: center;      /* center horizontally */
-    justify-content: center;  /* center vertically */
+    display: flex;          
+    flex-direction: column;   
+    align-items: center;    
+    justify-content: center; 
     gap: 1em;  
 }
 
 #drawing-container h3, #game-container h3 {
-    color: #D7A758; /* golden highlight */
+    color: #D7A758; 
 }
 
 #drawing-container p, #game-container p {
@@ -264,7 +263,7 @@ html {
 
 /* Contact Form Styles */
 #contact {
-    max-width: calc(100% - 900px); /* Wider to match drawing app */
+    max-width: calc(100% - 900px); 
     color: #FAFAF9;
     margin: 4em auto 8em auto;
     padding: 2em;
@@ -371,7 +370,7 @@ html {
   height: 100vh;
   opacity: 80%;
   background-image: url('bg.jpg');
-  background-size: 110%; /* slightly zoomed for movement space */
+  background-size: 110%; 
   background-position: 50% 50%;
   background-repeat: no-repeat;
   z-index: -1;
@@ -382,7 +381,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2); /* adjust darkness */
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .hero {

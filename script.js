@@ -1,4 +1,3 @@
-// AOS init for slide-from-left
 AOS.init({ duration: 800, once: true });
 
 // Nav: Add active class for current page
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     links.forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPage || (currentPage === 'index.html' && href === 'index.html')) {
-            link.style.color = '#D7A758'; // Highlight
+            link.style.color = '#D7A758';
         }
     });
 
